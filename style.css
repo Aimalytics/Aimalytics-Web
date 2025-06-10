@@ -1,4 +1,8 @@
-/* General Resets and Body Styles */
+/* ==========================================================================
+   Base & Mobile First Styles
+   ========================================================================== */
+
+/* --- General Resets and Body Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +11,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Dark background for a gamer aesthetic */
-    color: #e0e0e0; /* Light grey text for readability */
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
@@ -21,39 +25,66 @@ body {
 /* --- Utility Classes --- */
 .button-primary {
     display: inline-block;
-    background-color: #007bff; /* Vibrant blue accent */
+    background-color: #007bff;
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
-
     border: none;
     cursor: pointer;
     font-family: inherit;
 }
 
 .button-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 .button-large {
-    padding: 15px 30px;
+    padding: 12px 24px; /* Mobile-first padding */
+    font-size: 1rem;   /* Mobile-first font size */
+}
+
+.button-full-width {
+    width: 100%;
+    padding: 12px;
     font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.button-secondary:hover {
+    background-color: #007bff;
+    color: #ffffff;
 }
 
 /* --- Navigation Bar --- */
 .navbar {
-    background-color: #1e1e1e; /* Slightly lighter than the body */
+    background-color: #1e1e1e;
     padding: 1rem 0;
     border-bottom: 1px solid #333;
 }
 
+/* Mobile: Stack logo and nav links */
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 .navbar .logo {
@@ -77,22 +108,17 @@ body {
 }
 
 .navbar nav a:not(.button-primary):hover {
-    color: #007bff; /* Highlight on hover */
+    color: #007bff;
 }
 
 /* --- Hero Section --- */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 60px 20px; /* Mobile-first padding */
 }
 
 .hero h1 {
-    font-size: 6rem; /* Makes the name the central, dominant element */
+    font-size: 3.5rem; /* Mobile-first font size */
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 0.5rem;
@@ -100,7 +126,7 @@ body {
 }
 
 .hero .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Mobile-first font size */
     color: #a0a0a0;
     margin-bottom: 2rem;
 }
@@ -113,14 +139,14 @@ body {
 
 .features h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.1rem; /* Mobile-first font size */
     margin-bottom: 40px;
     color: #ffffff;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Mobile: Single column layout */
     gap: 30px;
 }
 
@@ -134,7 +160,7 @@ body {
 
 .feature-card h3 {
     font-size: 1.5rem;
-    color: #007bff; /* Use accent color for headings */
+    color: #007bff;
     margin-bottom: 15px;
 }
 
@@ -168,14 +194,18 @@ body {
     color: #777;
 }
 
+/* Mobile: Stack footer links */
 .footer .footer-links {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer a {
     color: #999;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0; /* Mobile-first margin */
     transition: color 0.3s ease;
 }
 
@@ -183,34 +213,27 @@ body {
     color: #007bff;
 }
 
-/* ----------------------------- */
-/* ---     Auth Page Styles    --- */
-/* ----------------------------- */
-
-/* Make the body a flex container to position the header and main content */
+/* --- Auth Page Specific Styles --- */
 .auth-page-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* This makes the <main> element grow to fill all available space
-   after the header, and also centers the form panel within it. */
 .auth-page-body main {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0; /* Add some padding for spacing */
+    padding: 30px 0; /* Mobile padding */
 }
 
-/* The .container class is no longer needed for centering on this page,
-   so we've removed the specific auth-page-body .container styles. */
-
+/* Mobile: Form panels stack vertically */
 .auth-page-container {
     display: flex;
-    max-width: 950px;
-    width: 90%; /* Use width % for better responsiveness */
+    flex-direction: column;
+    max-width: 450px; /* Mobile max-width */
+    width: 90%;
     background-color: #1e1e1e;
     border-radius: 10px;
     border: 1px solid #333;
@@ -219,35 +242,32 @@ body {
 }
 
 .auth-panel {
-    padding: 40px 35px;
+    padding: 30px 25px; /* Mobile padding */
 }
 
 .sign-in-panel {
-    flex: 1.5;
-    border-right: 1px solid #333;
+    border-bottom: 1px solid #333; /* Separator for mobile view */
 }
 
 .sign-up-panel {
-    flex: 1;
     background-color: #121212;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .auth-panel h1, .auth-panel h2 {
     color: #ffffff;
     margin-bottom: 8px;
     font-weight: 600;
+    text-align: center; /* Center all titles on mobile */
 }
-.auth-panel h1 { font-size: 2.2rem; }
-.auth-panel h2 { font-size: 1.8rem; text-align: center; }
+
+.auth-panel h1 { font-size: 2rem; }
+.auth-panel h2 { font-size: 1.7rem; }
 .auth-panel p {
     margin-bottom: 30px;
     color: #a0a0a0;
+    text-align: center;
 }
-.sign-up-panel p { text-align: center; }
-.panel-subtitle { font-size: 1rem; }
+.panel-subtitle { font-size: 0.9rem; }
 
 .sr-only {
     position: absolute; width: 1px; height: 1px;
@@ -275,9 +295,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+    font-size: 0.85rem;
 }
 a.forgot-password {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #007bff;
     text-decoration: none;
 }
@@ -308,32 +329,67 @@ a.forgot-password:hover { text-decoration: underline; }
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
 
-.button-full-width {
-    width: 100%; padding: 12px;
-    font-size: 1.1rem; margin-top: 10px;
-}
+/* ==========================================================================
+   Desktop and Larger Screen Styles
+   ========================================================================== */
+@media (min-width: 850px) {
 
-.button-secondary {
-    display: inline-block; background-color: transparent; color: #007bff;
-    border: 2px solid #007bff; padding: 10px 20px; border-radius: 5px;
-    text-decoration: none; font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-    font-family: inherit;
-}
-.button-secondary:hover {
-    background-color: #007bff; color: #ffffff;
-}
+    /* --- Utility --- */
+    .button-large {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
 
-/* --- Mobile styles for the AUTH PAGE (at a different breakpoint) --- */
-@media (max-width: 850px) {
-    /* The main change is stacking the form panels vertically */
-    .auth-page-container {
+    /* --- Navbar --- */
+    .navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* --- Hero --- */
+    .hero {
+        padding: 100px 20px;
+        min-height: 70vh;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
     }
-    
+    .hero h1 { font-size: 6rem; }
+    .hero .subtitle { font-size: 1.5rem; }
+
+    /* --- Features --- */
+    .features h2 { font-size: 2.5rem; }
+    .features-grid {
+        /* This grid is already responsive, but we ensure it's set for desktop */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* --- Footer --- */
+    .footer .footer-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .footer a { margin: 0 10px; }
+
+    /* --- Auth Page --- */
+    .auth-page-container {
+        flex-direction: row;
+        max-width: 950px;
+    }
+    .auth-panel { padding: 40px 35px; }
     .sign-in-panel {
-        border-right: none;
-        border-bottom: 1px solid #333;
+        flex: 1.5;
+        border-right: 1px solid #333;
+        border-bottom: none; /* Remove mobile border */
     }
+    .sign-up-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .auth-panel h1 { text-align: left; }
+    .auth-panel p { text-align: left; }
+    .sign-up-panel h2, .sign-up-panel p { text-align: center; }
+    .panel-subtitle { font-size: 1rem; }
 }
