@@ -12,8 +12,23 @@
 </head>
 <body class="auth-page-body">
 
-    <div class="container">
-        <!-- New Flexbox container for the entire auth section -->
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Link the logo back to your landing page -->
+            <a href="index.html" class="logo">Aimalytics</a>
+            <nav>
+                <!-- Simplified nav for the auth page -->
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html">Back to Site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area that will hold the centered form -->
+    <main>
         <div class="auth-page-container">
 
             <!-- Sign In Panel (Primary) -->
@@ -62,23 +77,17 @@
                         <label for="signup-password" class="sr-only">Password</label>
                         <input type="password" id="signup-password" placeholder="Create a Password" required>
                     </div>
-                    <div class="form-group">
-                        <label for="confirm-password" class="sr-only">Password</label>
-                        <input type="password" id="confirm-password" placeholder="Confirm your Password" required>
-                    </div>
-
                     <div class="form-group-checkbox">
                         <input type="checkbox" name="terms-and-services" id="terms-and-services" required>
                         <label for="terms-and-services">I accept the <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms and Services</a></label>
                     </div>
                     
-                    <!-- Using a new secondary button style -->
                     <button type="submit" class="button-secondary button-full-width">Create Account</button>
                 </form>
             </div>
 
         </div> <!-- end .auth-page-container -->
-    </div> <!-- end .container -->
+    </main> <!-- end main -->
 
 </body>
 </html>
