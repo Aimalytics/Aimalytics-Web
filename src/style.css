@@ -1,0 +1,235 @@
+/* General Resets and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background for a gamer aesthetic */
+    color: #e0e0e0; /* Light grey text for readability */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Utility Classes --- */
+.button-primary {
+    display: inline-block;
+    background-color: #007bff; /* Vibrant blue accent */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button-large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #1e1e1e; /* Slightly lighter than the body */
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:not(.button-primary):hover {
+    color: #007bff; /* Highlight on hover */
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 6rem; /* Makes the name the central, dominant element */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+}
+
+/* --- Features Section --- */
+.features {
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    /* This grid is already partially responsive! It will wrap when space is tight. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #007bff; /* Use accent color for headings */
+    margin-bottom: 15px;
+}
+
+/* --- Styling for the new feature list in the feature cards --- */
+.feature-card .feature-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 15px;
+    text-align: left; /* Align list text to the left for readability */
+}
+
+.feature-card .feature-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px; /* Make space for the custom "bullet" */
+}
+
+.feature-card .feature-list li::before {
+    content: '✓'; /* Use a checkmark as the bullet */
+    position: absolute;
+    left: 0;
+    color: #007bff; /* Use the primary accent color */
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+    color: #777;
+}
+
+.footer .footer-links {
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+
+/* ----------------------------------- */
+/* --- Responsive Design for Mobile--- */
+/* ----------------------------------- */
+
+@media (max-width: 768px) {
+    /* Adjust Navbar for smaller screens */
+    .navbar .container {
+        flex-direction: column; /* Stack logo and nav links */
+        gap: 1rem;
+    }
+
+    /* Adjust Hero section for readability */
+    .hero {
+        padding: 60px 20px;
+        min-height: auto; /* Allow content to define the height */
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem; /* Reduce heading size to fit screen */
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .button-large {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    /* Adjust Features section */
+    .features h2 {
+        font-size: 2.1rem;
+    }
+    
+    .features-grid {
+        /* This ensures the cards stack into a single column on mobile */
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust Footer for better stacking */
+    .footer .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer a {
+        margin: 0; /* Remove horizontal margin when stacked */
+    }
+}
