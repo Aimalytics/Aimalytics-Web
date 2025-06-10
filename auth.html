@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aimalytics - Account</title>
+    <!-- Make sure to link your stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Adding Poppins font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page-body">
+
+    <div class="container">
+        <!-- New Flexbox container for the entire auth section -->
+        <div class="auth-page-container">
+
+            <!-- Sign In Panel (Primary) -->
+            <div class="auth-panel sign-in-panel">
+                <h1>Sign In</h1>
+                <p class="panel-subtitle">Welcome back! Please enter your details.</p>
+                
+                <form action="" method="">
+                    <div class="form-group">
+                        <label for="username" class="sr-only">Username</label>
+                        <input type="text" id="username" placeholder="Username" required autofocus>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="form-group-checkbox">
+                            <input type="checkbox" name="remember-me" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="button-primary button-full-width">Sign In</button>
+                </form>
+            </div>
+
+            <!-- Sign Up Panel (Secondary) -->
+            <div class="auth-panel sign-up-panel">
+                <h2>New to Aimalytics?</h2>
+                <p>Create your account. It's free and only takes a minute.</p>
+                
+                <form action="" method="">
+                    <div class="form-group">
+                        <label for="signup-username" class="sr-only">Username</label>
+                        <input type="text" id="signup-username" placeholder="Choose a Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email" class="sr-only">Email</label>
+                        <input type="email" id="signup-email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password" class="sr-only">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password" class="sr-only">Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your Password" required>
+                    </div>
+
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" name="terms-and-services" id="terms-and-services" required>
+                        <label for="terms-and-services">I accept the <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms and Services</a></label>
+                    </div>
+                    
+                    <!-- Using a new secondary button style -->
+                    <button type="submit" class="button-secondary button-full-width">Create Account</button>
+                </form>
+            </div>
+
+        </div> <!-- end .auth-page-container -->
+    </div> <!-- end .container -->
+
+</body>
+</html>
