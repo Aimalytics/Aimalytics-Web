@@ -35,6 +35,20 @@ body {
     line-height: 1.6;
 }
 
+/* NEW: Global Layout Helpers */
+/* This makes the app take full height and allows the footer to be "pushed" down */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1; /* Allows the main content area to expand and fill available space */
+    display: flex; /* Makes the main area a flex container for its children */
+    flex-direction: column;
+}
+
 a {
     color: var(--clr-accent-primary);
     text-decoration: none;
@@ -54,6 +68,12 @@ a:hover {
     max-width: 1100px;
     margin: 0 auto;
 }
+
+/* NEW: Utility Class */
+.text-primary-color {
+    color: var(--clr-accent-primary);
+}
+
 
 /* --- Buttons --- */
 .button-primary,
@@ -130,7 +150,7 @@ a:hover {
 .form-group input:focus {
     outline: none;
     border-color: var(--clr-accent-primary);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(153, 136, 255, 0.25); /* Adjusted shadow color to match accent */
 }
 
 .form-options {
@@ -203,7 +223,7 @@ a:hover {
     border-width: 0;
 }
 
-/* --- Styled List (NEW reusable component) --- */
+/* --- Styled List --- */
 .styled-list {
     list-style-type: none;
     padding-left: 0;
@@ -358,26 +378,20 @@ a:hover {
    4. Page-Specific Styles
    ========================================================================== */
 
-/* --- Auth Page --- */
-.auth-page-body {
+/* --- REVISED: Auth Page Wrapper --- */
+.auth-page-wrapper {
+    flex-grow: 1; /* Allows this wrapper to fill the main content area */
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.auth-page-body main {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    padding: 40px 20px;
 }
 
 .auth-page-container {
     display: flex;
     flex-direction: column;
     max-width: 450px;
-    width: 90%;
+    width: 100%; /* Changed from 90% to be responsive within the wrapper */
     background-color: var(--clr-bg-medium);
     border-radius: 10px;
     border: 1px solid var(--clr-border);
@@ -415,6 +429,7 @@ a:hover {
 }
 
 .panel-subtitle { font-size: 0.9rem; }
+
 
 /* --- Text Content Page (Terms/Privacy) --- */
 .text-content-page {
@@ -482,10 +497,12 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
-
+    
     .hero {
         padding: 100px 20px;
-        min-height: 70vh;
+        min-height: 70vh; /* This can be removed or adjusted if not desired */
+        display: flex; /* Added flex to help center content vertically */
+        flex-direction: column;
         justify-content: center;
     }
     .hero h1 { font-size: 6rem; }
@@ -515,6 +532,8 @@ a:hover {
     }
     .sign-up-panel {
         flex: 1;
+        display: flex; /* Add flex to center content inside */
+        flex-direction: column;
         justify-content: center;
     }
     .auth-panel h1 { text-align: left; }

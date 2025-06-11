@@ -6,7 +6,8 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <h1><span style={{ color: '#9988FF' }}>Aim</span>alytics</h1>
+          {/* UPDATED to use the new CSS class */}
+          <h1><span className="text-primary-color">Aim</span>alytics</h1>
           <p className="subtitle">Tracking your aim training has never been easier.</p>
           <Link to="/auth" className="button-primary button-large">Get Started for Free</Link>
         </div>
