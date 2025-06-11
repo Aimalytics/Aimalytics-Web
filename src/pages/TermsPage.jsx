@@ -2,7 +2,7 @@ function PrivacyPage() {
   return (
     <div className="container">
       <div className="text-content-page">
-        <h1>Privacy Policy</h1>
+        <h1>Terms of Service</h1>
         <p className="last-updated">Last Updated: June 11, 2025</p>
 
         <div className="legal-disclaimer">
@@ -18,11 +18,46 @@ function PrivacyPage() {
           Always consult with a qualified legal professional.
         </div>
 
-        <h2>1. Information We Collect</h2>
-        <p>We collect information you provide directly to us when you create an account, such as your username, email address, and password. We also collect Usage Data automatically when you use the Service...</p>
-        
-        {/* ... Rest of your privacy policy content ... */}
-        
+        <h2>1. Introduction</h2>
+        <p>Welcome to Aimalytics ("Company", "we", "our", "us")! These Terms of Service ("Terms") govern your
+          use of our website located at aimalytics.com (together or individually "Service") operated by
+          Aimalytics. Our Privacy Policy also governs your use of our Service and explains how we collect,
+          safeguard, and disclose information that results from your use of our web pages.</p>
+
+        <h2>2. Use of Our Service</h2>
+        <p>By using our Service, you agree to subscribe to newsletters, marketing or promotional materials and
+          other information we may send. However, you may opt out of receiving any, or all, of these
+          communications from us by following the unsubscribe link or by emailing us.</p>
+        <p>You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to
+          use the Service in any way that violates any applicable national or international law or regulation.
+        </p>
+
+        <h2>3. User Accounts</h2>
+        <p>When you create an account with us, you guarantee that you are above the age of 18 and that the
+          information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete,
+          or obsolete information may result in the immediate termination of your account on the Service.</p>
+        <p>You are responsible for maintaining the confidentiality of your account and password, including but
+          not limited to the restriction of access to your computer and/or account. You agree to accept
+          responsibility for any and all activities or actions that occur under your account and/or password.
+        </p>
+
+        <h2>4. Intellectual Property</h2>
+        <p>The Service and its original content (excluding Content provided by users), features, and
+          functionality are and will remain the exclusive property of Aimalytics and its licensors. The
+          Service is protected by copyright, trademark, and other laws of both the United States and foreign
+          countries. Our trademarks may not be used in connection with any product or service without the
+          prior written consent of Aimalytics.</p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>In no event shall Aimalytics, nor its directors, employees, partners, agents, suppliers, or
+          affiliates, be liable for any indirect, incidental, special, consequential or punitive damages,
+          including without limitation, loss of profits, data, use, goodwill, or other intangible losses,
+          resulting from your access to or use of or inability to access or use the Service.</p>
+
+        <h2>6. Governing Law</h2>
+        <p>These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which
+          Aimalytics is established, without regard to its conflict of law provisions.</p>
+
       </div>
     </div>
   );
