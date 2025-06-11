@@ -329,6 +329,86 @@ a.forgot-password:hover { text-decoration: underline; }
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
 
+/* --- Text Content Page (Terms/Privacy) --- */
+.text-content-page {
+    background-color: #1e1e1e;
+    padding: 25px 20px; /* Mobile padding */
+    margin: 30px auto;
+    border-radius: 8px;
+    border: 1px solid #333;
+    max-width: 800px; /* Constrains line length for readability */
+}
+
+.text-content-page h1 {
+    font-size: 2rem; /* Mobile font size */
+    color: #ffffff;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.text-content-page .last-updated {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.legal-disclaimer {
+    background-color: rgba(255, 180, 0, 0.1);
+    border: 1px solid #ffb400;
+    color: #ffda7e;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.legal-disclaimer strong {
+    color: #ffb400;
+}
+
+.text-content-page h2 {
+    font-size: 1.5rem; /* Mobile font size */
+    color: #007bff;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.text-content-page p {
+    margin-bottom: 15px;
+}
+
+.text-content-page ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.text-content-page li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+.text-content-page li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.text-content-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.text-content-page a:hover {
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    Desktop and Larger Screen Styles
    ========================================================================== */
@@ -392,4 +472,11 @@ a.forgot-password:hover { text-decoration: underline; }
     .auth-panel p { text-align: left; }
     .sign-up-panel h2, .sign-up-panel p { text-align: center; }
     .panel-subtitle { font-size: 1rem; }
+
+    .text-content-page {
+        padding: 50px;
+        margin: 60px auto;
+    }
+    .text-content-page h1 { font-size: 2.5rem; }
+    .text-content-page h2 { font-size: 1.8rem; }
 }
