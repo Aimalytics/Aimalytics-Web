@@ -28,8 +28,36 @@ function PrivacyPage() {
           data may include information such as your computer's Internet Protocol address (e.g., IP address),
           browser type, browser version, the pages of our Service that you visit, the time and date of your
           visit, the time spent on those pages, and other diagnostic data.</p>
-          
-        {/* Add the rest of your content here */}
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect for various purposes, including to:</p>
+        <ul class="styled-list">
+          <li>Provide, operate, and maintain our Service</li>
+          <li>Improve, personalize, and expand our Service</li>
+          <li>Understand and analyze how you use our Service</li>
+          <li>Communicate with you, either directly or through one of our partners, for customer service, to
+            provide you with updates and other information relating to the Service, and for marketing and
+            promotional purposes</li>
+          <li>Process your transactions</li>
+          <li>Find and prevent fraud</li>
+        </ul>
+
+        <h2>3. Cookies and Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies to track the activity on our Service and we hold
+          certain information. Cookies are files with a small amount of data which may include an anonymous
+          unique identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie
+          is being sent. However, if you do not accept cookies, you may not be able to use some portions of
+          our Service.</p>
+
+        <h2>4. Data Security</h2>
+        <p>The security of your data is important to us but remember that no method of transmission over the
+          Internet or method of electronic storage is 100% secure. While we strive to use commercially
+          acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+        <h2>5. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the
+          new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any
+          changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 
       </div>
     </div>
