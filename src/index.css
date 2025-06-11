@@ -480,6 +480,103 @@ a:hover {
     margin-bottom: 15px;
 }
 
+/* --- Pricing Section --- */
+.pricing {
+    padding: 60px 20px;
+    background-color: var(--clr-bg-dark); /* Alternating background from features */
+}
+
+.pricing h2 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 40px;
+    color: var(--clr-white);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.pricing-card {
+    /* Inherit styles from feature-card and add more */
+    background-color: var(--clr-bg-light);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--clr-border);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For the 'Best Value' badge */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    color: var(--clr-white); /* White for better contrast on pricing */
+    margin-bottom: 15px;
+}
+
+.pricing-card .price {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--clr-accent-primary);
+    margin-bottom: 5px;
+}
+
+.pricing-card .price-period {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--clr-text-secondary);
+}
+
+.pricing-card .billing-note {
+    font-size: 0.85rem;
+    color: var(--clr-text-subtle);
+    margin-bottom: 25px;
+    height: 20px; /* Reserve space to prevent layout shift */
+}
+
+.pricing-card p {
+    color: var(--clr-text-secondary);
+    margin-bottom: 25px;
+}
+
+.pricing-card .styled-list {
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+/* Featured card for 'Best Value' */
+.pricing-card.featured {
+    border-color: var(--clr-accent-primary);
+    transform: scale(1.05); /* Make it pop out by default */
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.best-value-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-accent-primary);
+    color: var(--clr-white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 
 /* ==========================================================================
    5. Desktop & Larger Screen Styles (min-width)
@@ -547,4 +644,15 @@ a:hover {
     }
     .text-content-page h1 { font-size: 2.5rem; }
     .text-content-page h2 { font-size: 1.8rem; }
+
+    
+    .pricing h2 { font-size: 2.5rem; }
+    .pricing-grid {
+        /* Align with features-grid for consistency */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .pricing-card.featured {
+      transform: scale(1.1); /* Make it even more prominent on desktop */
+    }
 }

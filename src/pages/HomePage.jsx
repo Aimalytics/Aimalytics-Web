@@ -6,7 +6,6 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          {/* UPDATED to use the new CSS class */}
           <h1><span className="text-primary-color">Aim</span>alytics</h1>
           <p className="subtitle">Tracking your aim training has never been easier.</p>
           <Link to="/auth" className="button-primary button-large">Get Started for Free</Link>
@@ -39,12 +38,68 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Pricing Section Placeholder */}
-      <section id="pricing" style={{ padding: '60px 0', textAlign: 'center' }}>
-          <div className="container">
-              <h2>Pricing</h2>
-              <p>Pricing information will go here.</p>
+      {/* Pricing Section - REVISED */}
+      <section id="pricing" className="pricing">
+        <div className="container">
+          <h2>Simple, Transparent Pricing</h2>
+          <div className="pricing-grid">
+
+            {/* Free Tier Card */}
+            <div className="pricing-card">
+              <h3>Free</h3>
+              <div className="price">
+                0€ <span className="price-period">/ month</span>
+              </div>
+              <p className="billing-note"> </p> {/* Placeholder for alignment */}
+              <p>For casual players getting started with aim analysis.</p>
+              <ul className="styled-list">
+                <li>Basic Performance Tracking</li>
+                <li>7-Day History Retention</li>
+                <li>Standard Replay Analysis</li>
+                <li>Community Access</li>
+              </ul>
+              <Link to="/auth" className="button-secondary button-full-width">Get Started</Link>
+            </div>
+
+            {/* Annual Tier Card (Featured) */}
+            <div className="pricing-card featured">
+              <div className="best-value-badge">Best Value</div>
+              <h3>Pro Annual</h3>
+              <div className="price">
+                6€ <span className="price-period">/ month</span>
+              </div>
+              <p className="billing-note">Billed as 72€ per year</p>
+              <p>For dedicated players committed to long-term improvement.</p>
+              <ul className="styled-list">
+                <li>All Advanced Metrics</li>
+                <li>Unlimited History Retention</li>
+                <li>In-depth Replay Analysis</li>
+                <li>AI-Powered Recommendations</li>
+                <li>Priority Support</li>
+              </ul>
+              <Link to="/auth" className="button-primary button-full-width">Choose Plan</Link>
+            </div>
+
+            {/* Monthly Tier Card */}
+            <div className="pricing-card">
+              <h3>Pro Monthly</h3>
+              <div className="price">
+                8€ <span className="price-period">/ month</span>
+              </div>
+              <p className="billing-note">Billed monthly</p>
+              <p>Unlock all pro features with the flexibility of a monthly plan.</p>
+              <ul className="styled-list">
+                <li>All Advanced Metrics</li>
+                <li>Unlimited History Retention</li>
+                <li>In-depth Replay Analysis</li>
+                <li>AI-Powered Recommendations</li>
+                <li>Standard Support</li>
+              </ul>
+              <Link to="/auth" className="button-secondary button-full-width">Choose Plan</Link>
+            </div>
+
           </div>
+        </div>
       </section>
     </>
   );
