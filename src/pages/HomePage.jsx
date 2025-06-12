@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom';
 
 function HomePage() {
+  const warmedUpPrice = "Free";
+  const dialedInMonthlyPrice = 7.99;
+  const dialedInAnnualPrice = 5.99;  // hypothetical annual effective monthly price
+  const theZoneMonthlyPrice = 9.99;
+  const theZoneAnnualPrice = 7.99;   // hypothetical annual effective monthly price
+
+  function calculateSavingsPercent(basePrice, discountedPrice) {
+    if (basePrice <= 0) return 0;
+    return Math.round(((basePrice - discountedPrice) / basePrice) * 100);
+  }
+
+
   return (
     <>
       {/* Hero Section */}
@@ -8,94 +20,96 @@ function HomePage() {
         <div className="container">
           <h1><span className="text-primary-color">Aim</span>alytics</h1>
           <p className="subtitle">Tracking your aim training has never been easier.</p>
-          <Link to="/auth" className="button-primary button-large">Get Started for Free</Link>
+          <a href="#pricing" className="button-primary button-large">Get Started for Free</a>
         </div>
       </section>
 
       {/* Features Section */}
       <section id="features" className="features">
         <div className="container">
-          <h2>Go Beyond the Score</h2>
+          <h2>Built for Deep Performance Insight</h2>
           <div className="features-grid">
+
             <div className="feature-card">
-              <h3>A Diagnostic Layer for Your Training</h3>
-              <p>Keep using Aim Lab or KovaaK's. Aimalytics isn't another trainer—it's a powerful analysis platform that works alongside them to reveal what's really happening behind every mouse flick and track.</p>
+              <h3>Not Another Trainer</h3>
+              <p>Aimalytics complements your existing tools like Aimlabs or KovaaK’s. It’s not about more reps—it’s about understanding the ones you’ve already done.</p>
             </div>
+
             <div className="feature-card">
-              <h3>The Replay Analysis Engine</h3>
-              <p>Our benchmark scenarios generate replays packed with unparalleled data. We go deeper than anyone else to visualize your mechanical habits:</p>
+              <h3>Replay-Driven Analytics</h3>
+              <p>Every benchmark run generates a replay enriched with precise motion data:</p>
               <ul className="styled-list">
-                <li>Slow-mo & Optimal Path Analysis</li>
-                <li>Detailed Flick & Tracking Metrics</li>
-                <li>Objective Smoothness & Jitter Data</li>
+                <li>Slow-motion playback with optimal path overlays</li>
+                <li>Quantified flicks, tracking stability, and reaction time</li>
+                <li>Motion smoothness and jitter analysis</li>
               </ul>
             </div>
+
             <div className="feature-card">
-              <h3>Targeted, Science-Backed Insight</h3>
-              <p>We translate complex data into clear, actionable feedback. By applying principles from motor learning and performance science, we help you identify the root cause of inconsistency and aim smarter.</p>
+              <h3>Actionable Metrics, Grounded in Science</h3>
+              <p>Our system translates raw input data into meaningful indicators—helping you detect habits, isolate weaknesses, and train more effectively using principles from motor learning and cognitive performance.</p>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Pricing Section - REVISED */}
+
+      {/* Pricing Section */}
       <section id="pricing" className="pricing">
         <div className="container">
-          <h2>Simple, Transparent Pricing</h2>
+          <h2>Choose Your Flow</h2>
           <div className="pricing-grid">
 
             {/* Free Tier Card */}
             <div className="pricing-card">
-              <h3>Free</h3>
+              <h3>Warmed Up</h3>
               <div className="price">
-                0€ <span className="price-period">/ month</span>
+                {warmedUpPrice}
               </div>
-              <p className="billing-note"> </p> {/* Placeholder for alignment */}
-              <p>For casual players getting started with aim analysis.</p>
+              <p className="billing-note">&nbsp;</p> {/* Placeholder for alignment */}
+              <p>Everything you need to track your aim training progress.</p>
               <ul className="styled-list">
-                <li>Basic Performance Tracking</li>
-                <li>7-Day History Retention</li>
-                <li>Standard Replay Analysis</li>
-                <li>Community Access</li>
+                <li>Access to all benchmark scenarios</li>
+                <li>Complete performance tracking with full history</li>
+                <li>Replay analysis for performance insight</li>
+                <li>Access to our Discord</li>
               </ul>
               <Link to="/auth" className="button-secondary button-full-width">Get Started</Link>
             </div>
 
-            {/* Annual Tier Card (Featured) */}
-            <div className="pricing-card featured">
-              <div className="best-value-badge">Best Value</div>
-              <h3>Pro Annual</h3>
+            {/* Intermediate Tier Card */}
+            <div className="pricing-card">
+              <h3>Dialed In</h3>
               <div className="price">
-                6€ <span className="price-period">/ month</span>
+                {dialedInMonthlyPrice}€ <span className="price-period">/ month</span>
               </div>
-              <p className="billing-note">Billed as 72€ per year</p>
-              <p>For dedicated players committed to long-term improvement.</p>
+              <p className="billing-note">Or {dialedInAnnualPrice}€ per month billed annually</p>
+              <p>Take your aim training to the next level with our advanced analytics.</p>
               <ul className="styled-list">
-                <li>All Advanced Metrics</li>
-                <li>Unlimited History Retention</li>
-                <li>In-depth Replay Analysis</li>
-                <li>AI-Powered Recommendations</li>
-                <li>Priority Support</li>
+                <li>Track advanced KPIs and performance trends</li>
+                <li>Store unlimited replays with cloud sync</li>
+                <li>Unlock deeper replay breakdowns</li>
+                <li>Compare progress session to session</li>
               </ul>
               <Link to="/auth" className="button-primary button-full-width">Choose Plan</Link>
             </div>
 
-            {/* Monthly Tier Card */}
-            <div className="pricing-card">
-              <h3>Pro Monthly</h3>
+            {/* Top Tier Card - Highlighted */}
+            <div className="pricing-card featured">
+              <h3>In The Zone</h3>
               <div className="price">
-                8€ <span className="price-period">/ month</span>
+                {theZoneMonthlyPrice}€ <span className="price-period">/ month</span>
               </div>
-              <p className="billing-note">Billed monthly</p>
-              <p>Unlock all pro features with the flexibility of a monthly plan.</p>
+              <p className="billing-note">Or {theZoneAnnualPrice}€ per month billed annually — save {calculateSavingsPercent(theZoneMonthlyPrice, theZoneAnnualPrice)}%</p>
+              <p>Access state-of-the-art analysis based on the latest research.</p>
               <ul className="styled-list">
-                <li>All Advanced Metrics</li>
-                <li>Unlimited History Retention</li>
-                <li>In-depth Replay Analysis</li>
-                <li>AI-Powered Recommendations</li>
-                <li>Standard Support</li>
+                <li>Enhanced historical performance evaluation</li>
+                <li>Exclusive in-depth metrics and trend forecasts</li>
+                <li>Flow state insights</li>
+                <li>Early access to experimental features</li>
               </ul>
-              <Link to="/auth" className="button-secondary button-full-width">Choose Plan</Link>
+              <Link to="/auth" className="button-primary button-full-width">Choose Plan</Link>
             </div>
 
           </div>

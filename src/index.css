@@ -28,6 +28,11 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
     font-family: var(--font-body);
     background-color: var(--clr-bg-dark);
@@ -557,7 +562,8 @@ a:hover {
 /* Featured card for 'Best Value' */
 .pricing-card.featured {
     border-color: var(--clr-accent-primary);
-    transform: scale(1.05); /* Make it pop out by default */
+    border-width: 3px;
+    /* transform: scale(1.05); */
 }
 
 .pricing-card.featured:hover {
@@ -652,7 +658,7 @@ a:hover {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     
-    .pricing-card.featured {
-      transform: scale(1.1); /* Make it even more prominent on desktop */
-    }
+    /* .pricing-card.featured {
+      transform: scale(1.1);
+    } */
 }
